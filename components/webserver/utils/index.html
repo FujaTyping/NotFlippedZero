@@ -2,10 +2,12 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>ESP32 Management AP</title>
+    <title>NotFlippedZero Config</title>
     <style>
         body {
             width: fit-content;
+            background-color: #181818;
+            color: #20C20E;
         }
         table, tr, th {
             border: 1px solid;
@@ -16,13 +18,13 @@
             padding:10px;
         }
         tr:hover, tr.selected {
-            background-color: lightblue;
+            background-color: #474747;
             cursor:pointer;
         }
     </style>
 </head>
 <body onLoad="getStatus()">
-    <h1>ESP32 Wi-Fi Penetration Tool</h1>
+    <h1>NotFlippedZero Wi-Fi Penetration Tool</h1>
     <section id="errors"></section>
     <section id="loading">Loading... Please wait</section>
     <section id="ready" style="display: none;">
@@ -118,7 +120,7 @@
         };
         oReq.onerror = function() {
             console.log("Request error");
-            document.getElementById("errors").innerHTML = "Cannot reach ESP32. Check that you are connected to management AP. You might get disconnected during attack.";
+            document.getElementById("errors").innerHTML = "Cannot reach ESP32. Check that you are connected to host. You might get disconnected during attack.";
             getStatus();
         };
         oReq.ontimeout = function() {
@@ -140,7 +142,7 @@
     }
     function countProgress(){
         if(time_elapsed >= attack_timeout){
-            document.getElementById("errors").innerHTML = "Please reconnect to management AP";
+            document.getElementById("errors").innerHTML = "Please reconnect to host";
             document.getElementById("errors").style.display = "block";
             clearInterval(running_poll);
         }
