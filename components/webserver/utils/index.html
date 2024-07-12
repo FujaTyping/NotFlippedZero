@@ -2,29 +2,50 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>NotFlippedZero Config</title>
+    <title>Flipped//Zero Pannel</title>
     <style>
         body {
             width: fit-content;
             background-color: #181818;
             color: #20C20E;
         }
-        table, tr, th {
+        table,
+        tr,
+        th {
             border: 1px solid;
             border-collapse: collapse;
             text-align: center;
         }
-        th, td {
-            padding:10px;
+        th,
+        td {
+            padding: 10px;
         }
-        tr:hover, tr.selected {
-            background-color: #474747;
-            cursor:pointer;
+        fieldset,
+        button,
+        select,
+        input {
+            border-color: #20C20E;
+            color: #20C20E;
+        }
+        input {
+            background-color: transparent;
+        }
+        button {
+            background: transparent;
+            padding: 5px;
+        }
+        select {
+            background-color: transparent;
+        }
+        tr:hover,
+        tr.selected {
+            background-color: #252525;
+            cursor: pointer;
         }
     </style>
 </head>
 <body onLoad="getStatus()">
-    <h1>NotFlippedZero Wi-Fi Penetration Tool</h1>
+    <h1>Flipped//Zero Penetration Tool</h1>
     <section id="errors"></section>
     <section id="loading">Loading... Please wait</section>
     <section id="ready" style="display: none;">
@@ -37,6 +58,7 @@
                     <button type="button" onClick="refreshAps()">Refresh</button>
                 </p>
             </fieldset>
+            <br>
             <fieldset>
                 <legend>Attack configuration</legend>
                 <p>
