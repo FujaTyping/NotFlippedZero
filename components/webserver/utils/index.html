@@ -5,9 +5,12 @@
     <title>Flipped//Zero Pannel</title>
     <style>
         body {
-            width: fit-content;
+            width: 100%;
             background-color: #181818;
-            color: #20C20E;
+            color: #20c20e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         table,
         tr,
@@ -31,6 +34,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding: 20px;
         }
         #Danger {
             border-color: #c20e0e;
@@ -44,6 +48,10 @@
         input {
             border-color: #c20e0e;
             color: #c20e0e;
+        }
+        a {
+            color: #c20e0e;
+            text-decoration: none;
         }
         input {
             background-color: transparent;
@@ -64,9 +72,9 @@
 </head>
 <body onLoad="getStatus()">
     <h1>Flipped//Zero Penetration Tool</h1>
-    <section id="errors"></section>
+    <section style="margin-bottom: 8px;" id="errors"></section>
     <section id="loading">Loading... Please wait</section>
-    <section id="ready" style="display: none;">
+    <section id="ready" style="display: none;margin-bottom: 30px">
         <h2>Attack configuration</h2>
         <form onSubmit="runAttack(); return false;">
             <fieldset>
@@ -107,12 +115,22 @@
         </form>
     </section>
     <section id="running" style="display: none;">
-        Time elapsed: <span id="running-progress"></span>
+        <fieldset id="Danger">
+            <legend>Attacking</legend>
+            <div>
+                Time elapsed: <span id="running-progress"></span>
+            </div>
+        </fieldset>
     </section>
     <section id="result" style="display: none;">
-        <div id="result-meta">Loading result.. Please wait</div>
-        <div id="result-content"></div>
-        <button type="button" onClick="resetAttack()">New attack</button>
+        <fieldset>
+            <legend>Result</legend>
+            <div>
+                <div id="result-meta">Loading result.. Please wait</div>
+                <div id="result-content"></div>
+                <button type="button" onClick="resetAttack()">New attack</button>
+            </div>
+        </fieldset>
     </section>
     <script>
     var AttackStateEnum = { READY: 0, RUNNING: 1, FINISHED: 2, TIMEOUT: 3};
