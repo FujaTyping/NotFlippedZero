@@ -72,9 +72,9 @@ void wifictl_ap_stop(){
 void wifictl_mgmt_ap_start(){
     wifi_config_t mgmt_wifi_config = {
         .ap = {
-            .ssid = "NotFlippedZero",
-            .ssid_len = strlen("NotFlippedZero"),
-            .password = "zer0admin",
+            .ssid = CONFIG_MGMT_AP_SSID,
+            .ssid_len = strlen(CONFIG_MGMT_AP_SSID),
+            .password = CONFIG_MGMT_AP_PASSWORD,
             .max_connection = CONFIG_MGMT_AP_MAX_CONNECTIONS,
             .authmode = WIFI_AUTH_WPA2_PSK
         },

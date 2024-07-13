@@ -8,6 +8,5 @@ build/bootloader/*
 !build/partition_table
 build/partition_table/*
 !build/partition_table/*.bin
-sdkconfig
 sdkconfig.old
 doc/api

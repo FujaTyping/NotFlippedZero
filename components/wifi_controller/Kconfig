@@ -7,14 +7,14 @@ menu "Wi-Fi Controller"
         Maximum number of scanned nearby AP
     menu "Management AP"
         config MGMT_AP_SSID
-            string "NotFlippedZero"
-            default "ManagementAP"
+            string "Management AP SSID"
+            default "NotFlippedZero"
             help
             SSID of management AP
 
         config MGMT_AP_PASSWORD
-            string "zer0admin"
-            default "mgmtadmin"
+            string "Management AP Password"
+            default "zer0admin"
             help
             Password for management AP WPA2 (minimum 8 characters)
 
