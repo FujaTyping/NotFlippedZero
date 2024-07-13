@@ -18,7 +18,7 @@ esptool.py -p [PORT] -b 115200 --after hard_reset write_flash --flash_mode dio -
 
 ## Using the tool
 1. After flashing connect the the ESP32 via **Wi-Fi**
-2. Default **SSID** `NotFlippedZerp` and **PASSWORD** `zer0admin`
+2. Default **SSID** `NotFlippedZero` and **PASSWORD** `zer0admin`
 3. After connected to the ESP32 go to your browser then type `192.168.4.1` (http) to access the pannel
 4. Start using the tool
 
@@ -30,4 +30,4 @@ idf.py menuconfig
 ```
 To config the wifi components go to the `Component config --> Wi-Fi Controller`
 
-# 🙏🏻 Big thank for [Risinek](https://github.com/risinek/esp32-wifi-penetration-tool) for original code !
+# 🙏🏻 Big thank to [Risinek](https://github.com/risinek/esp32-wifi-penetration-tool) for original code !
