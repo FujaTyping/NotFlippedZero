@@ -10,3 +10,4 @@ build/partition_table/*
 !build/partition_table/*.bin
 sdkconfig.old
 *.bak
+.cache*
