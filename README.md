@@ -2,7 +2,8 @@
 It provides some common functionality that is commonly used in Wi-Fi attacks and makes implementing new attacks a bit simpler
 
 ## Install & Build & Flash
-- ESP-IDF 4.1 `(commit 5ef1b390026270503634ac3ec9f1ec2e364e23b2)`
+- ESP-IDF 4.1 `(commit 5ef1b390026270503634ac3ec9f1ec2e364e23b2)` (ESP32)
+- ESP-IDF 4.4.8 [Release](https://github.com/espressif/esp-idf/releases/tag/v4.4.8) (ESP32C3 , ESP32)
 ```
 idf.py build
 ```
@@ -14,6 +15,19 @@ idf.py -p [PORT] flash
 - [ESPTOOL.PY](https://github.com/espressif/esptool) (Require python)
 ```
 esptool.py -p [PORT] -b 115200 --after hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size detect 0x8000 build/partition_table/partition-table.bin 0x1000 build/bootloader/bootloader.bin 0x10000 build/esp32-wifi-penetration-tool.bin
+```
+
+## Default board
+This project set default support board is **ESP32C3**
+- Change board to other board
+Must match ESP-IDF version
+>- ESP-IDF 4.1 `(commit 5ef1b390026270503634ac3ec9f1ec2e364e23b2)` (ESP32)
+> - ESP-IDF 4.4.8 [Release](https://github.com/espressif/esp-idf/releases/tag/v4.4.8) (ESP32C3 , ESP32)
+```
+idf.py set-target [BOARD_NAME]
+```
+```
+idf.py build
 ```
 
 ## Using the tool
